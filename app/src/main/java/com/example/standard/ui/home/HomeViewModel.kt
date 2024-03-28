@@ -5,6 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
+    var count = 0
+
+    fun increaseCount(){
+        count++
+    }
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"
