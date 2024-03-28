@@ -38,12 +38,18 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        homeViewModel._seconds.observe(viewLifecycleOwner){
+           emittedInt -> binding.tvCounter.text = emittedInt.toString()
+        }
         return root
     }
 
     private fun incrementCount() {
-        homeViewModel.increaseCount()
-        binding.tvCounter.text = homeViewModel.count.toString()
+       //homeViewModel.increaseCount()
+        homeViewModel.startTime()
+        binding.tvCounter.text = homeViewModel._seconds.toString()
+
     }
 
     override fun onDestroyView() {
