@@ -17,7 +17,7 @@ class DashboardViewModel : ViewModel() {
      fun getMarsPhotos() {
         viewModelScope.launch {
             val listResult = MarsApi.retrofitService.getPhotos()
-            _text.value = listResult
+            _text.value = listResult.size.toString()
         }
 
     }
