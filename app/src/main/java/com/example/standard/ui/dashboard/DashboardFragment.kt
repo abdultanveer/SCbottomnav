@@ -32,6 +32,11 @@ class DashboardFragment : Fragment() {
         dashboardViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        binding.btnGet.setOnClickListener {
+            dashboardViewModel.getMarsPhotos()
+        }
+
         return root
     }
 
@@ -39,4 +44,6 @@ class DashboardFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    fun getJson(view: View) {}
 }

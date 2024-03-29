@@ -17,7 +17,7 @@ class HomeViewModel : ViewModel() {
     fun startTime() {
         timer = object : CountDownTimer(10000,1000){
             override fun onTick(millisUntilFinished: Long) {
-                _seconds.value = millisUntilFinished.toInt()
+                _seconds.value = millisUntilFinished.toInt()/1000
                 Log.i(TAG,"time left = "+millisUntilFinished.toInt())
             }
 
